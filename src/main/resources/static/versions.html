@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+<meta charset="utf-8">
+<style>
+body {
+	background: #404040;
+}
+
+.version_block {
+	height: auto;
+	width: 50%;
+	float:left ;
+	display: inline-block;
+	height: auto;
+}
+
+.version_block_inside{
+	background: green;
+	display: flow-root;
+	margin:3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0
+		rgba(0, 0, 0, 0.1);
+}
+
+.inline {
+	display: inline-block;
+	margin: 10px 10px 12px 10px;
+}
+
+.version_project_name:after {
+	content: "|";
+	display: inline-block;
+}
+
+.version_project_name {
+	float: left;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline;
+	font-family: "Open sans", Verdana, Helvetica, "sans serif";
+	font-size: 10px;
+	font-weight: 650;
+	height: auto;
+	list-style-type: none;
+	text-align: left;
+	text-decoration-color: rgb(255, 255, 255);
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
+	text-size-adjust: 100%;
+	width: auto;
+	min-width:180px;
+}
+
+.version {
+	float: right;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline;
+	font-family: "Open sans", Verdana, Helvetica, "sans serif";
+	font-size: 10px;
+	font-weight: 500;
+	height: auto;
+	list-style-type: none;
+	text-align: right;
+	text-decoration-color: rgb(255, 255, 255);
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px;
+	text-size-adjust: 100%;
+	width: auto;
+}
+</style>
+<script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+
+</head>
+<body style="height: 100%; margin: 0">
+	<div class="version_view">
+		<div class="version_block">
+			<div class="version_block_inside">
+				<div class="version_project_name inline">
+					<span>project_name</span>
+				</div>
+				<div class="version inline">
+					<span>version</span>
+				</div>
+			</div>
+		</div>
+		<div class="version_block">
+			<div class="version_block_inside">
+				<div class="version_project_name inline">
+					<span>project_name</span>
+				</div>
+				<div class="version inline">
+					<span>version</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/js/version.js"></script>
+</body>
+</html>

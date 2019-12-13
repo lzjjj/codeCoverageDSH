@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+<meta charset="utf-8">
+<style>
+body{
+	background:#404040;
+}
+li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.block {
+	width: 33.33%;
+	display: inline-grid;;
+}
+
+.block_inside {
+	background: #dddddd;
+	width:auto;
+	height:90px;
+	margin:5px;
+	display: inline-grid;;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.1);
+}
+
+.block_header {
+	z-index: 2;
+	padding:10px 5px 5px 5px;
+}
+
+.block_footer {
+	display: flow-root;
+	padding:5px;
+	z-index: 2;
+	
+	color:rgba(255, 255, 255,0.9);
+	cursor:pointer;
+	display:inline;
+	font-family:"Open sans", Verdana, Helvetica, "sans serif";
+	font-size:10px;
+	font-weight:700;
+	height:auto;
+	list-style-type:none;
+	text-align:left;
+	text-size-adjust:100%;
+	white-space:nowrap;
+}
+
+.bar{
+    background: green;
+    padding: 0;
+	height:90px;
+    position: fixed;
+    z-index: 1;
+}
+
+.outside {
+	width: 100%;
+}
+
+.inside {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.project_name {
+	color:rgb(255, 255, 255);
+	cursor:pointer;
+	display:inline;
+	font-family:"Open sans", Verdana, Helvetica, "sans serif";
+	font-size:20px;
+	font-weight:700;
+	height:auto;
+	list-style-type:none;
+	text-align:center;
+	text-decoration-color:rgb(255, 255, 255);
+	text-decoration-line:none;
+	text-decoration-style:solid;
+	text-shadow:rgba(0, 0, 0, 0.5) 1px 1px 0px;
+	text-size-adjust:100%;
+	width:auto;
+}
+
+
+.message {
+	padding: 5px;
+	
+	color:rgba(0, 0, 0,0.6);
+	cursor:pointer;
+	font-family:"Open sans", Verdana, Helvetica, "sans serif";
+	font-size:10px;
+	font-weight:550;
+	height:auto;
+	list-style-type:none;
+	text-size-adjust:100%;
+	white-space:nowrap;
+}
+
+.current_num {
+	float: left;
+	display: inline-block;
+}
+
+.last_build_time {
+	float: right;
+	display: inline-block;
+}
+</style>
+</head>
+<body style="height: 100%; margin: 0">
+	<script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jenkins.js"></script>
+	
+	<script type="text/javascript">
+		window.onresize=function(){
+			jenkins_refresh();
+		}
+			
+    </script>
+
+	<div class="jenkins_view_content">
+		<div class="block">
+			<div class="bar"></div>
+			<div class="block_header">
+				<div class="outside">
+					<div class="inside">
+						<a href="#" class="project_name">project_name</a>
+					</div>
+				</div>
+				<div class="outside">
+					<ul class="message inside">
+						<li>message</li>
+					</ul>
+				</div>
+			</div>
+			<div class="block_footer">
+				<div class="current_num">current_num</div>
+				<div class="last_build_time">last_build_time</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<html style="height: 100%">
+<head>
+<meta charset="utf-8">
+<style>
+body {
+	background: #404040;
+}
+.click_link{
+	color: rgb(255, 255, 255);
+    text-decoration-color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0px;
+    white-space: nowrap;
+}
+
+.progress-bar-group{
+ 	margin: 0px 0px 1px 0px;
+    padding: 3px 3px 3px 10px;
+    color: #dadada;
+    cursor: pointer;
+    font-family: "Open sans", Verdana, Helvetica, "sans serif";
+    font-size: 15px;
+    font-weight: 600;
+    height: auto;
+    list-style-type: none;
+    text-decoration-color: rgb(255, 255, 255);
+    text-decoration-line: none;
+    text-decoration-style: solid;
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0px;
+    text-size-adjust: 100%;
+    width: auto;
+    background: #222222;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+}
+
+.progress-bar-view{
+	display:inline-block;
+	/*width: 25%;*/
+	width:calc(33% - 67px);
+}
+
+.progress-bar-header{
+ 	color:#d3d3d3;
+	padding:3px;
+	margin: 2px 5px 2px 5px;	
+    font-family:"Open sans", Verdana, Helvetica, "sans serif";
+}
+
+.progress-bar-title{
+	display:inline-block;
+ 	color:#d3d3d3;
+ 	font-size:10px;
+ 	float:left;
+}
+
+.progress-bar-value{
+	float:right;
+	display:inline-block;
+ 	color:#d3d3d3;
+ 	font-size:10px;
+}
+
+.progress-bar {
+    background-color: #1a1a1a;
+    height: 17px;
+    width:auto;
+    padding: 2px;
+    margin: 20px 5px 1px 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
+}
+
+.progress-bar-precent {
+    float: right;
+    color: #e0e0e0;
+    margin: -20px 10px 0px 0px;
+    font-size: 10px;
+    z-index: 200;
+    position: relative;
+    text-shadow: 0px 0px 3px #333333;
+}
+
+
+.progress-bar span {
+    display: inline-block;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+    transition: width .4s ease-in-out;    
+}
+
+.red span {
+    background-color: red;   
+}
+
+.blue span {
+    background-color: #34c2e3;   
+}
+
+.orange span {
+      background-color: #fecf23;
+      background-image: linear-gradient(top, #fecf23, #fd9215);  
+}   
+
+.green span {
+      background-color: #a5df41;
+      background-image: linear-gradient(top, #a5df41, #4ca916);  
+}
+
+.stripes span {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 3s linear infinite;             
+}
+
+@keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+.box-number{
+	background:blue;
+	display:inline-block;
+	border-radius: 5px;
+	margin: 4px 3px 3px 3px;
+	box-shadow: 0px 43px 0px #212121 inset, 0px 1px 0px #444;
+	vertical-align:top;
+	height:45px;
+}
+.box-number-text{
+	margin:0;
+    color: #d3d3d3;
+	padding:0px 0px 0px 5px;
+	font-size: 10px;
+}
+.box-number-value{
+	margin:0;
+	padding:0;
+    color: #d3d3d3;
+	font-size: 22px;
+	width:60px;
+	text-align:center;
+}
+.box-number-rating-A {
+	background-color: #0a0
+}
+.box-number-rating-B {
+	background-color: #b0d513
+}
+.box-number-rating-C {
+	background-color: #eabe06
+}
+.box-number-rating-D {
+	background-color: #ed7d20
+}
+.box-number-rating-E {
+	background-color: #e00
+}
+</style>
+	<link rel="stylesheet" href="/css/box.css">
+    <script type="text/javascript" src="/js/box.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+	<div id="message-box" class="message-box" style="display:none">
+		<div id="message-box-header" class="message-box-header">
+			<div id="message-box-title" class="message-box-title">Title</div>
+			<div class="message-box-close" onclick="toggleBox()">x</div>
+		</div>
+		<div class="message-box-content">
+			<div id="message-box-content-view" class="message-box-content-view">
+
+			</div>
+		</div>
+	</div>
+	<div id="sonar_view_chart" style="height: 80%"></div>
+	<div class="sonar_dashboard_view" style="height: 154px;bottom:0">
+		<div class="progress-bar-view" style="display:none">
+			<div class="progress-bar-header">
+				<div class="progress-bar-title">new code coverage</div>			
+				<div class="progress-bar-value">40%</div>			
+			</div>
+			<div class="progress-bar red stripes">
+			    <span style="width: 40%"></span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/lib/echarts.min.js"></script>
+	<script type="text/javascript" src="/js/lib/dark.js"></script>
+	<script type="text/javascript" src="/js/sonar.js"></script>
+
+	<script>
+		document.getElementById("sonar_view_chart").style.height=document.body.clientHeight - 154;
+		window.onresize = function() {
+			document.getElementById("sonar_view_chart").style.height=document.body.clientHeight - 154;
+			sonarChart.resize();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+.message-box {
+	color: #dddddd;
+	background: #333333;
+	box-shadow: 0 0 15px 1px #0c0c0c;
+	position: absolute;
+	width: 70%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-height: 95%;
+	overflow: auto;
+	z-index: 999;
+}
+
+.message-box-header {
+	background: #252525;
+	height: auto;
+}
+
+.message-box-title {
+	display: inline-block;
+	width: auto;
+	margin: 2px;
+	padding: 2px 5px 2px 5px;
+}
+
+.message-box-close {
+	color: #a0a0a0;
+	background: #252525;
+	font-weight: 700;
+	float: right;
+	display: inline-block;
+	margin: 1px 1px 0px 0px;
+	padding: 1px 15px 4px 15px;
+}
+
+.message-box-close:hover {
+	background: #000000;
+}
+
+.message-box-content {
+	width: auto;
+	margin: 5px;
+	min-height: 300px;
+}
+
+.message-box-content-view {
+	
+}
+
+.counting-line {
+	width: 100%;
+	display: flex;
+	margin-bottom: 2px;
+	box-shadow: 0 0 0 1px #131313;
+}
+
+.counting-line>div {
+	display: inline-block;
+	background: #252525;
+	padding: 5px;;
+	margin: 0;
+}
+
+.counting-line-file-name {
+	width: 95%;
+	word-wrap: break-word;
+	word-break: keep-all; /* 不换行 */
+	white-space: nowrap; /* 不换行 */
+	overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与
+			overflow:hidden;一起使用。*/
+}
+
+.counting-line-file-count {
+	border-left: 1px solid #131313;
+	width: 5%;
+	text-align: center;
+}
+
+.counting-line-file-source {
+	text-decoration: none;
+	color: #dddddd;
+	background: #191919;
+	padding: 2px 5px 2px 5px;
+	margin: 0;
+}
+
+.counting-line-file-source:hover {
+	color: #888888;
+	background: #111111;
+}
+
+.counting-line-add {
+	text-decoration: none;
+	color: #dddddd;
+	background: #759aa0;
+	padding: 2px 5px 2px 5px;
+	margin: 0;
+}
+
+.counting-line-remove {
+	text-decoration: none;
+	color: #dddddd;
+	background: #dd6b66;
+	padding: 2px 5px 2px 5px;
+	margin: 0;
+}

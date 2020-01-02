@@ -138,7 +138,7 @@ public class SonarqubeService extends BaseCacheService<Object> {
 			if (line == null || StringUtils.isEmpty(line.getString("scmDate"))) {
 				continue;
 			}
-			if(line.getString("scmDate").compareTo(leakPeriodDate) > 0){
+			if("0".equals(line.getString("lineHits")) && "0".equals(line.getString("utLineHits")) && line.getString("scmDate").compareTo(leakPeriodDate) > 0){
 				if(result.get(line.getString("scmAuthor"))==null) {
 					result.put(line.getString("scmAuthor"), 1);
 				}else {

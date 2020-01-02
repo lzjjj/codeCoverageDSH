@@ -8,10 +8,10 @@
 	<script type="text/javascript" src="/js/lib/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/lib/echarts.min.js"></script>
 	<script type="text/javascript" src="/js/lib/dark.js"></script>
-	<script type="text/javascript" src="/js/jenkins.js"></script>
+	<!--<script type="text/javascript" src="/js/jenkins.js"></script>-->
 	<script type="text/javascript" src="/js/sonar.js"></script>
-	<script type="text/javascript" src="/js/version.js"></script>
-	<script type="text/javascript" src="/js/box.js"></script>
+	<!--<script type="text/javascript" src="/js/version.js"></script>-->
+	<!--<script type="text/javascript" src="/js/box.js"></script>-->
 </head>
 <body>
 
@@ -98,12 +98,13 @@
         document.getElementById("sonar_view_chart").style.height=((document.getElementsByClassName("module")[0].offsetHeight
             -document.getElementsByClassName("module_title")[0].offsetHeight
             -document.getElementsByClassName("sonar_dashboard_view")[0].offsetHeight - 10)+'px');
-        document.getElementById("alm_measurement").style.height=((document.getElementsByClassName("module")[0].offsetHeight-document.getElementsByClassName("module_title")[0].offsetHeight - 10)+'px');
-        document.getElementById("alm_measurement").innerHTML='<iframe class="alm_measurement" name="iframeContent" frameborder="0" src="http://testhkgapp377:8090/#/almiterationdsh/index?workspaceId=WS100102&projectName=SPS&iterationName='+calIteration(0)+'&cvName=SPS_Sprint_Style2&time=" + Date.parse(new Date())"></iframe>';
+        // document.getElementById("alm_measurement").style.height=((document.getElementsByClassName("module")[0].offsetHeight-document.getElementsByClassName("module_title")[0].offsetHeight - 10)+'px');
+        // document.getElementById("alm_measurement").innerHTML='<iframe class="alm_measurement" name="iframeContent" frameborder="0" src="http://testhkgapp377:8090/#/almiterationdsh/index?workspaceId=WS100102&projectName=SPS&iterationName='+calIteration(0)+'&cvName=SPS_Sprint_Style2&time=" + Date.parse(new Date())"></iframe>';
         if(sonarChart)sonarChart.resize();
     }
     window.onresize=function(){
-        jenkins_refresh();
+        // jenkins_refresh();
+        sonar_refresh();
         home_resize();
     }
     setTimeout(home_resize,2000);
